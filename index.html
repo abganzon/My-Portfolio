@@ -67,7 +67,7 @@ canvas#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:non
 .avatar-glow{position:absolute;inset:-20px;background:radial-gradient(circle,rgba(99,102,241,.3),transparent 65%);border-radius:50%;pointer-events:none;}
 .avatar-card{width:300px;height:300px;border-radius:28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;}
 .avatar-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(168,85,247,.08));pointer-events:none;}
-.av-circle{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#a855f7);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:900;color:#fff;}
+.av-circle{width:110px;height:110px;border-radius:50%;background: url(img/profile1.jpg) center / cover no-repeat;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:900;color:#fff;}
 .av-title{color:#818cf8;font-size:.9rem;font-weight:600;}
 .badge{position:absolute;background:rgba(8,13,26,.85);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:7px 14px;font-size:.72rem;font-weight:700;display:flex;align-items:center;gap:6px;backdrop-filter:blur(8px);}
 .badge-open{bottom:-14px;left:-20px;}
@@ -169,7 +169,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 <nav>
   <div class="nav-inner">
     <a href="#home" class="logo">
-      <div class="logo-icon">AG</div>
+      <div class="logo-icon"></div>
       ArielGanzon
     </a>
     <ul class="nav-links">
@@ -713,3 +713,4 @@ function resetForm(){
 </script>
 </body>
 </html>
+
