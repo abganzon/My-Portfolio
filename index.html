@@ -42,11 +42,19 @@ section{padding:96px 24px;}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1;transform:none;}
 
-/* ── HERO ── */
+/* HERO */
 #home{min-height:100vh;padding-top:80px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 15% 55%,rgba(99,102,241,.18) 0%,transparent 55%),radial-gradient(ellipse at 85% 15%,rgba(168,85,247,.12) 0%,transparent 50%),#080d1a;}
 canvas#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
-@media(max-width:768px){.hero-grid{grid-template-columns:1fr;}.hero-right{display:none;}.nav-links,.btn-hire{display:none!important;}.mob-btn{display:block!important;}}
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .hero-right{display:flex!important;justify-content:center;}
+  .nav-links,.btn-hire{display:none!important;}
+  .mob-btn{display:block!important;}
+  .avatar-wrap{justify-content:center;}
+  .avatar-card{width:220px;height:220px;}
+  .av-circle{width:85px;height:85px;}
+}
 .pulse-dot{width:8px;height:8px;border-radius:50%;background:#6366f1;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.5);}50%{box-shadow:0 0 0 8px rgba(99,102,241,0);}}
 .hero-name{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,7vw,4.5rem);font-weight:700;line-height:1.08;margin:8px 0 16px;}
@@ -67,14 +75,14 @@ canvas#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:non
 .avatar-glow{position:absolute;inset:-20px;background:radial-gradient(circle,rgba(99,102,241,.3),transparent 65%);border-radius:50%;pointer-events:none;}
 .avatar-card{width:300px;height:300px;border-radius:28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;}
 .avatar-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(168,85,247,.08));pointer-events:none;}
-.av-circle{width:110px;height:110px;border-radius:50%;background: url(img/profile1.jpg) center / cover no-repeat;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:900;color:#fff;}
+.av-circle{width:110px;height:110px;border-radius:50%;background:url(data:image/jpeg;base64,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) center / cover no-repeat;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:900;color:#fff;}
 .av-title{color:#818cf8;font-size:.9rem;font-weight:600;}
 .badge{position:absolute;background:rgba(8,13,26,.85);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:7px 14px;font-size:.72rem;font-weight:700;display:flex;align-items:center;gap:6px;backdrop-filter:blur(8px);}
 .badge-open{bottom:-14px;left:-20px;}
 .badge-yoe{top:-14px;right:-20px;}
 .dot-green{width:7px;height:7px;border-radius:50%;background:#4ade80;}
 
-/* ── EXPERIENCE ── */
+/* EXPERIENCE */
 #experience{background:#0d1326;}
 .tl{position:relative;margin-top:56px;}
 .tl::before{content:'';position:absolute;left:18px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#6366f1,rgba(168,85,247,.1));}
@@ -88,7 +96,7 @@ canvas#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:non
 .tl-tech{color:#6366f1;font-size:.8rem;font-weight:600;margin-bottom:10px;}
 .tl-card p{color:#64748b;font-size:.875rem;line-height:1.7;}
 
-/* ── PORTFOLIO ── */
+/* PORTFOLIO */
 #portfolio{background:#080d1a;}
 .port-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:52px;}
 .port-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:22px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;}
@@ -106,7 +114,7 @@ canvas#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:non
 .port-link{display:inline-flex;align-items:center;gap:6px;color:#6366f1;font-size:.85rem;font-weight:600;text-decoration:none;transition:color .2s;}
 .port-link:hover{color:#a5b4fc;}
 
-/* ── SKILLS ── */
+/* SKILLS */
 #skills{background:#0d1326;}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:52px;}
 @media(max-width:640px){.skills-grid{grid-template-columns:1fr;}}
@@ -118,7 +126,7 @@ canvas#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:non
 .skill-fill{height:100%;width:0%;background:linear-gradient(90deg,#6366f1,#a855f7);border-radius:50px;transition:width 1.3s ease;}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:10px;margin-top:48px;justify-content:center;}
 
-/* ── CONTACT ── */
+/* CONTACT */
 #contact{background:#080d1a;}
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;margin-top:52px;}
 @media(max-width:768px){.contact-grid{grid-template-columns:1fr;}}
@@ -203,15 +211,16 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
         <p style="color:#64748b;margin-bottom:4px;" class="reveal">Hello, I'm</p>
         <h1 class="hero-name reveal">Ariel<br/><span class="grad">Ganzon</span></h1>
         <p class="hero-desc reveal">
-          A fullstack developer with over <strong style="color:#e2e8f0;">4 years</strong> of experience specializing in creating dynamic, scalable web solutions using
-          <span>Bubble.io</span>, <span>Go High Level</span>, and <span>REST API</span> integration.
+          A fullstack developer with over <strong style="color:#e2e8f0;">5 years</strong> of experience building scalable
+          <span>SaaS products</span> powered by <span>AI</span>&mdash;from intelligent automations and
+          <span>OpenAI integrations</span> to end-to-end platforms deployed in production.
         </p>
         <div class="btn-row reveal">
           <a href="#portfolio" class="btn-primary">View Work <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           <a href="#contact" class="btn-outline">Contact Me</a>
         </div>
         <div class="hero-stats reveal">
-          <div><div class="stat-num grad">4+</div><div class="stat-label">Years Experience</div></div>
+          <div><div class="stat-num grad">5+</div><div class="stat-label">Years Experience</div></div>
           <div class="stat-div"></div>
           <div><div class="stat-num grad">6+</div><div class="stat-label">Projects Built</div></div>
           <div class="stat-div"></div>
@@ -224,10 +233,10 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           <div class="avatar-card">
             <div class="av-circle"></div>
             <div class="av-title">Fullstack Developer</div>
-            <div style="font-size:.75rem;color:#475569;">Philippines 🇵🇭</div>
+            <div style="font-size:.75rem;color:#475569;">Philippines &#127477;&#127469;</div>
           </div>
           <div class="badge badge-open"><div class="dot-green"></div> Open to Work</div>
-          <div class="badge badge-yoe">🚀 4+ YOE</div>
+          <div class="badge badge-yoe">&#128640; 5+ YOE</div>
         </div>
       </div>
     </div>
@@ -246,87 +255,78 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
       <h2 class="section-title">A showcase of my recent<br/><span class="grad">development projects</span></h2>
     </div>
     <div class="tl">
-
       <div class="tl-item reveal">
         <div class="tl-icon-col"><div class="tl-dot"></div></div>
         <div class="tl-card">
-          <div class="tl-date">2023 – Present</div>
-          <h3>SaaS & AI Product Development</h3>
-          <div class="tl-tech">OpenAI · REST API · Bubble.io · n8n · Stripe · Webhooks</div>
+          <div class="tl-date">2023 &ndash; Present</div>
+          <h3>SaaS &amp; AI Product Development</h3>
+          <div class="tl-tech">OpenAI &middot; REST API &middot; Bubble.io &middot; n8n &middot; Stripe &middot; Webhooks</div>
           <p>Built and launched full SaaS platforms powered by AI, including subscription billing, user authentication, and AI-driven features. Integrated OpenAI APIs for intelligent automation, content generation, and data processing workflows. Delivered end-to-end products from concept to production.</p>
         </div>
       </div>
-
       <div class="tl-item reveal">
         <div class="tl-icon-col"><div class="tl-dot"></div></div>
         <div class="tl-card">
-          <div class="tl-date">2021 – Present</div>
-          <h3>Shopify & WordPress Development</h3>
-          <div class="tl-tech">Shopify · Liquid · WordPress · WooCommerce · CSS · JavaScript</div>
-          <p>Designed and developed custom Shopify storefronts and WordPress websites for clients across various industries including e-commerce, health & wellness, and services. Delivered responsive, conversion-optimized sites with custom themes, plugin integrations, and performance tuning.</p>
+          <div class="tl-date">2021 &ndash; Present</div>
+          <h3>Shopify &amp; WordPress Development</h3>
+          <div class="tl-tech">Shopify &middot; Liquid &middot; WordPress &middot; WooCommerce &middot; CSS &middot; JavaScript</div>
+          <p>Designed and developed custom Shopify storefronts and WordPress websites for clients across various industries including e-commerce, health &amp; wellness, and services. Delivered responsive, conversion-optimized sites with custom themes, plugin integrations, and performance tuning.</p>
         </div>
       </div>
-
       <div class="tl-item reveal">
         <div class="tl-icon-col"><div class="tl-dot"></div></div>
         <div class="tl-card">
-          <div class="tl-date">Jan 2024 – Dec 2024</div>
+          <div class="tl-date">Jan 2024 &ndash; Dec 2024</div>
           <h3>Automation Expert</h3>
-          <div class="tl-tech">n8n · Go High Level · Airtable · Bubble</div>
-          <p>Designed and implemented automated workflows across platforms. Developed custom solutions for lead generation, client onboarding, data syncing, and marketing automation—streamlining operations and boosting efficiency for clients.</p>
+          <div class="tl-tech">n8n &middot; Go High Level &middot; Airtable &middot; Bubble</div>
+          <p>Designed and implemented automated workflows across platforms. Developed custom solutions for lead generation, client onboarding, data syncing, and marketing automation&mdash;streamlining operations and boosting efficiency for clients.</p>
         </div>
       </div>
-
       <div class="tl-item reveal">
         <div class="tl-icon-col"><div class="tl-dot"></div></div>
         <div class="tl-card">
-          <div class="tl-date">Jan 2022 – Aug 2023</div>
-          <h3>Embedding & Vector Database</h3>
-          <div class="tl-tech">OpenAI Embeddings · Pinecone · Weaviate</div>
+          <div class="tl-date">Jan 2022 &ndash; Aug 2023</div>
+          <h3>Embedding &amp; Vector Database</h3>
+          <div class="tl-tech">OpenAI Embeddings &middot; Pinecone &middot; Weaviate</div>
           <p>Developed advanced AI-powered solutions using vector databases and embedding technologies. Built semantic search systems, recommendation engines, and RAG applications for enhanced user experiences and content discovery.</p>
         </div>
       </div>
-
       <div class="tl-item reveal">
         <div class="tl-icon-col"><div class="tl-dot"></div></div>
         <div class="tl-card">
-          <div class="tl-date">Jan 2022 – Aug 2023</div>
+          <div class="tl-date">Jan 2022 &ndash; Aug 2023</div>
           <h3>Audio Transcribing</h3>
-          <div class="tl-tech">Speech-to-Text · Lead Generation</div>
+          <div class="tl-tech">Speech-to-Text &middot; Lead Generation</div>
           <p>An audio transcribing solution that captures user audio input, converts it into text, and collects user details for lead generation. Enhances accessibility while adding valuable leads to your database.</p>
         </div>
       </div>
-
       <div class="tl-item reveal">
         <div class="tl-icon-col"><div class="tl-dot"></div></div>
         <div class="tl-card">
-          <div class="tl-date">Mar 2021 – Jul 2021</div>
+          <div class="tl-date">Mar 2021 &ndash; Jul 2021</div>
           <h3>Food Ecommerce Application</h3>
-          <div class="tl-tech">eCommerce · Cart · Payments</div>
+          <div class="tl-tech">eCommerce &middot; Cart &middot; Payments</div>
           <p>A user-friendly food eCommerce application featuring product listings with options to add items to the cart and save favorites. Customers can easily check out using cash on delivery or card payments.</p>
         </div>
       </div>
-
       <div class="tl-item reveal">
         <div class="tl-icon-col"><div class="tl-dot"></div></div>
         <div class="tl-card">
           <div class="tl-date">Mar 2021</div>
           <h3>Sage Emergency Application</h3>
-          <div class="tl-tech">SMS Verification · Emergency Response</div>
+          <div class="tl-tech">SMS Verification &middot; Emergency Response</div>
           <p>A streamlined emergency app enabling users to register and log in with SMS verification. Users can quickly request assistance, instantly notifying the company for prompt response.</p>
         </div>
       </div>
-
       <div class="tl-item reveal">
         <div class="tl-icon-col"><div class="tl-dot"></div></div>
         <div class="tl-card">
           <div class="tl-date">May 2020</div>
           <h3>Medical Ecommerce Application</h3>
-          <div class="tl-tech">Healthcare · Product Catalog</div>
+          <div class="tl-tech">Healthcare &middot; Product Catalog</div>
           <p>A user-friendly medical eCommerce application offering a comprehensive catalog of healthcare products and medical supplies. Customers can effortlessly browse detailed product listings.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -339,38 +339,23 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
       <h2 class="section-title">Recent projects I've<br/><span class="grad">worked on</span></h2>
     </div>
     <div class="port-grid">
-
       <div class="port-card reveal">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://adhub-landing.onrender.com/" alt="AdHub Platform" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>📊</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://adhub-landing.onrender.com/" alt="AdHub Platform" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#128202;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
-      
         <div class="port-body">
           <h3>AdHub</h3>
           <p>An AI-powered data marketplace and automation platform that enables organizations to buy, sell, and process large-scale datasets.</p>
-          
-          <div class="tags">
-            <span class="tag">Data Marketplace</span>
-            <span class="tag">AI Automation</span>
-            <span class="tag">API Integration</span>
-            <span class="tag">Workflow Engine</span>
-          </div>
-      
-          <a href="https://adhub-landing.onrender.com/" target="_blank" class="port-link">
-            View Project 
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
-          </a>
+          <div class="tags"><span class="tag">Data Marketplace</span><span class="tag">AI Automation</span><span class="tag">API Integration</span><span class="tag">Workflow Engine</span></div>
+          <a href="https://adhub-landing.onrender.com/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-      
       <div class="port-card reveal">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://trysodpods.com/" alt="Sod Pods" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🌿</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://trysodpods.com/" alt="Sod Pods" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#127807;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -380,25 +365,23 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           <a href="https://trysodpods.com/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
       <div class="port-card reveal" style="transition-delay:.05s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://trynutripod.com/" alt="Nutri Pod" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🥗</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://trynutripod.com/" alt="Nutri Pod" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#129367;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
           <h3>Nutri Pod</h3>
-          <p>A health & wellness Shopify store for nutritional pod products. Clean design with strong product storytelling and CTA flow.</p>
+          <p>A health &amp; wellness Shopify store for nutritional pod products. Clean design with strong product storytelling and CTA flow.</p>
           <div class="tags"><span class="tag">Shopify</span><span class="tag">Health</span><span class="tag">eCommerce</span></div>
           <a href="https://trynutripod.com/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
       <div class="port-card reveal" style="transition-delay:.1s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://bethelfarms.com/" alt="Bethel Farms" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🌾</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://bethelfarms.com/" alt="Bethel Farms" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#127806;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -408,11 +391,10 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           <a href="https://bethelfarms.com/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
       <div class="port-card reveal" style="transition-delay:.15s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://gottagograss.com/" alt="Gotta Go Grass" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🐾</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://gottagograss.com/" alt="Gotta Go Grass" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#128062;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -422,11 +404,10 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           <a href="https://gottagograss.com/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
       <div class="port-card reveal" style="transition-delay:.2s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://j3destynz.com/" alt="J3 Destynz" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>✂️</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://j3destynz.com/" alt="J3 Destynz" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#9986;&#65039;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -436,11 +417,10 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           <a href="https://j3destynz.com/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
       <div class="port-card reveal" style="transition-delay:.25s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://impressionscarpet.com/" alt="Impressions Carpet" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🏠</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://impressionscarpet.com/" alt="Impressions Carpet" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#127968;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -450,58 +430,45 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           <a href="https://impressionscarpet.com/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
       <div class="port-card reveal">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://crm-80058.bubbleapps.io/version-test/" alt="CRM Creative Innovations" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🏢</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://crm-80058.bubbleapps.io/version-test/" alt="CRM Creative Innovations" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#127970;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
           <h3>CRM Creative Innovations</h3>
           <p>A comprehensive customer relationship management system built with Bubble.io to help businesses track and manage client interactions.</p>
           <div class="tags"><span class="tag">Bubble.io</span><span class="tag">CRM</span><span class="tag">No-code</span></div>
-          <a href="https://crm-80058.bubbleapps.io/version-test/" target="_blank" class="port-link">
-            View Project
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
+          <a href="https://crm-80058.bubbleapps.io/version-test/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
       <div class="port-card reveal" style="transition-delay:.1s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://www.adhubaudience.com/" alt="Ad Hub" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🎯</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://www.adhubaudience.com/" alt="Ad Hub" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#127919;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
           <h3>Ad Hub Find Your Audience</h3>
           <p>A platform helping businesses find and target their ideal audience for advertising campaigns with precision and effectiveness.</p>
           <div class="tags"><span class="tag">AdTech</span><span class="tag">Targeting</span><span class="tag">Marketing</span></div>
-          <a href="https://www.adhubaudience.com/" target="_blank" class="port-link">
-            View Project
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
+          <a href="https://www.adhubaudience.com/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
       <div class="port-card reveal" style="transition-delay:.2s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://robooth.netlify.app/" alt="Digital Photobooth" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>📸</div>'"/>
+          <div class="port-thumb-loader">Loading preview&hellip;</div>
+          <img src="https://image.thum.io/get/width/600/crop/350/https://robooth.netlify.app/" alt="Digital Photobooth" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>&#128248;</div>'"/>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
           <h3>AI-Powered Digital Photobooth</h3>
           <p>A digital photobooth solution that captures photos, supports customization, and enhances event engagement through an intuitive interface.</p>
           <div class="tags"><span class="tag">AI</span><span class="tag">Events</span><span class="tag">Netlify</span></div>
-          <a href="https://robooth.netlify.app/" target="_blank" class="port-link">
-            View Project
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
+          <a href="https://robooth.netlify.app/" target="_blank" class="port-link">View Project <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -511,7 +478,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
   <div class="container">
     <div class="text-center reveal">
       <div class="section-label" style="display:inline-flex;">Skills</div>
-      <h2 class="section-title">Technologies &<br/><span class="grad">tools I work with</span></h2>
+      <h2 class="section-title">Technologies &amp;<br/><span class="grad">tools I work with</span></h2>
     </div>
     <div class="skills-grid">
       <div class="reveal">
@@ -559,10 +526,9 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           <div><h4>Email</h4><p>arielganzon@gmail.com</p></div>
         </div>
       </div>
-
       <div class="form-card reveal" style="transition-delay:.15s">
         <div id="success-box" class="success-box">
-          <div class="success-icon">✓</div>
+          <div class="success-icon">&#10003;</div>
           <h3>Message Sent!</h3>
           <p>Thanks for reaching out. I'll get back to you soon.</p>
           <button class="btn-again" onclick="resetForm()">Send Another</button>
@@ -574,7 +540,6 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           </div>
           <div class="form-group"><label>Subject</label><input id="fs" class="inp" type="text" placeholder="Project Inquiry"/></div>
           <div class="form-group"><label>Message</label><textarea id="fm" class="inp" placeholder="Tell me about your project..."></textarea></div>
-          <!-- Replace YOUR_WEB3FORMS_KEY below with your key from web3forms.com -->
           <input type="hidden" id="w3f-key" value="4cb09875-5902-44b4-b0e2-2d02bd0c254f"/>
           <button class="btn-send" id="send-btn" onclick="sendMsg()">
             <svg id="send-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
@@ -601,16 +566,14 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <p class="foot-copy">© 2025 Ariel Ganzon. All Rights Reserved.</p>
+    <p class="foot-copy">&copy; 2025 Ariel Ganzon. All Rights Reserved.</p>
   </div>
 </footer>
 
 <script>
-// cursor glow
 const cg = document.getElementById('cursor-glow');
 document.addEventListener('mousemove', e => { cg.style.left=e.clientX+'px'; cg.style.top=e.clientY+'px'; });
 
-// stars canvas
 (function(){
   const c = document.getElementById('stars');
   const ctx = c.getContext('2d');
@@ -640,17 +603,14 @@ document.addEventListener('mousemove', e => { cg.style.left=e.clientX+'px'; cg.s
   frame();
 })();
 
-// scroll reveal
 const ro = new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
-// skill bars on scroll
 const so = new IntersectionObserver(e=>e.forEach(x=>{
   if(x.isIntersecting){ x.target.querySelectorAll('.skill-fill').forEach(b=>b.style.width=b.dataset.w+'%'); so.unobserve(x.target); }
 }),{threshold:.3});
 document.querySelectorAll('#skills .reveal').forEach(el=>so.observe(el));
 
-// active nav
 const secs=['home','experience','portfolio','skills','contact'];
 window.addEventListener('scroll',()=>{
   let cur='home';
@@ -658,14 +618,12 @@ window.addEventListener('scroll',()=>{
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.s===cur));
 },{passive:true});
 
-// smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
   e.preventDefault();
   const t=document.querySelector(a.getAttribute('href'));
   if(t) t.scrollIntoView({behavior:'smooth'});
 }));
 
-// form
 async function sendMsg(){
   const n = document.getElementById('fn').value.trim();
   const e = document.getElementById('fe').value.trim();
@@ -677,16 +635,11 @@ async function sendMsg(){
   const label = document.getElementById('send-label');
   const icon = document.getElementById('send-icon');
   errEl.style.display = 'none';
-
   if(!n||!e||!s||!m){ errEl.textContent='Please fill in all fields.'; errEl.style.display='block'; return; }
   if(!e.includes('@')){ errEl.textContent='Please enter a valid email.'; errEl.style.display='block'; return; }
-
-  // loading state
   btn.disabled = true;
   icon.outerHTML = '<svg id="send-icon" width="18" height="18" viewBox="0 0 24 24" style="animation:spin360 .9s linear infinite;flex-shrink:0"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,.3)" stroke-width="3" fill="none"/><path d="M12 2a10 10 0 0 1 10 10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg>';
   label.textContent = 'Sending…';
-
-  // if no key set, fall back to mailto
   if(!key || key === 'YOUR_WEB3FORMS_KEY'){
     const subj = encodeURIComponent(s);
     const body = encodeURIComponent(`Name: ${n}\nEmail: ${e}\n\nMessage:\n${m}`);
@@ -696,19 +649,11 @@ async function sendMsg(){
     showSuccess();
     return;
   }
-
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({
-        access_key: key,
-        name: n,
-        email: e,
-        subject: s,
-        message: m,
-        from_name: 'Portfolio Contact'
-      })
+      body: JSON.stringify({access_key:key,name:n,email:e,subject:s,message:m,from_name:'Portfolio Contact'})
     });
     const data = await res.json();
     if(data.success){ showSuccess(); }
@@ -740,7 +685,3 @@ function resetForm(){
 </script>
 </body>
 </html>
-
-
-
-
