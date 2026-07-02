@@ -105,10 +105,9 @@ canvas#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:non
 .port-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:22px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;}
 .port-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(99,102,241,.2);border-color:rgba(99,102,241,.3);}
 .port-thumb{height:180px;overflow:hidden;position:relative;background:#0d1326;}
-.port-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s ease;display:block;}
-.port-card:hover .port-thumb img{transform:scale(1.05);}
+.port-thumb iframe{position:absolute;top:0;left:0;width:400%;height:400%;transform:scale(.25);transform-origin:0 0;border:0;pointer-events:none;transition:transform .4s ease;}
+.port-card:hover .port-thumb iframe{transform:scale(.265);}
 .port-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(8,13,26,.8));pointer-events:none;}
-.port-thumb-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#334155;font-size:.75rem;}
 .port-body{padding:22px;}
 .port-body h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:8px;}
 .port-body p{color:#64748b;font-size:.85rem;line-height:1.65;margin-bottom:14px;}
@@ -225,7 +224,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
         <div class="hero-stats reveal">
           <div><div class="stat-num grad">5+</div><div class="stat-label">Years Experience</div></div>
           <div class="stat-div"></div>
-          <div><div class="stat-num grad">6+</div><div class="stat-label">Projects Built</div></div>
+          <div><div class="stat-num grad">7+</div><div class="stat-label">Projects Built</div></div>
           <div class="stat-div"></div>
           <div><div class="stat-num grad">8+</div><div class="stat-label">Tech Stacks</div></div>
         </div>
@@ -354,8 +353,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://adhub-landing.onrender.com/" alt="AdHub Platform" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>📊</div>'"/>
+          <iframe src="https://adhub-landing.onrender.com/" title="AdHub Platform" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
       
@@ -381,8 +379,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
       
       <div class="port-card reveal">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://trysodpods.com/" alt="Sod Pods" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🌿</div>'"/>
+          <iframe src="https://trysodpods.com/" title="Sod Pods" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -395,8 +392,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal" style="transition-delay:.05s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://trynutripod.com/" alt="Nutri Pod" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🥗</div>'"/>
+          <iframe src="https://trynutripod.com/" title="Nutri Pod" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -409,8 +405,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal" style="transition-delay:.1s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://bethelfarms.com/" alt="Bethel Farms" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🌾</div>'"/>
+          <iframe src="https://bethelfarms.com/" title="Bethel Farms" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -423,8 +418,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal" style="transition-delay:.15s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://gottagograss.com/" alt="Gotta Go Grass" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🐾</div>'"/>
+          <iframe src="https://gottagograss.com/" title="Gotta Go Grass" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -437,8 +431,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal" style="transition-delay:.2s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://j3destynz.com/" alt="J3 Destynz" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>✂️</div>'"/>
+          <iframe src="https://j3destynz.com/" title="J3 Destynz" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -451,8 +444,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal" style="transition-delay:.25s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://impressionscarpet.com/" alt="Impressions Carpet" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🏠</div>'"/>
+          <iframe src="https://impressionscarpet.com/" title="Impressions Carpet" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -465,8 +457,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://crm-80058.bubbleapps.io/version-test/" alt="CRM Creative Innovations" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🏢</div>'"/>
+          <iframe src="https://crm-80058.bubbleapps.io/version-test/" title="CRM Creative Innovations" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -482,8 +473,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal" style="transition-delay:.1s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://www.adhubaudience.com/" alt="Ad Hub" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>🎯</div>'"/>
+          <iframe src="https://www.adhubaudience.com/" title="Ad Hub" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -499,8 +489,7 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
       <div class="port-card reveal" style="transition-delay:.2s">
         <div class="port-thumb">
-          <div class="port-thumb-loader">Loading preview…</div>
-          <img src="https://image.thum.io/get/width/600/crop/350/https://robooth.netlify.app/" alt="Digital Photobooth" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:3.5rem;\'>📸</div>'"/>
+          <iframe src="https://robooth.netlify.app/" title="AI-Powered Digital Photobooth" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
           <div class="port-thumb-overlay"></div>
         </div>
         <div class="port-body">
@@ -508,6 +497,22 @@ footer{background:#050810;border-top:1px solid rgba(255,255,255,.06);padding:32p
           <p>A digital photobooth solution that captures photos, supports customization, and enhances event engagement through an intuitive interface.</p>
           <div class="tags"><span class="tag">AI</span><span class="tag">Events</span><span class="tag">Netlify</span></div>
           <a href="https://robooth.netlify.app/" target="_blank" class="port-link">
+            View Project
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="port-card reveal" style="transition-delay:.25s">
+        <div class="port-thumb">
+          <iframe src="https://soulgani.com/" title="Soulgani Activewear" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+          <div class="port-thumb-overlay"></div>
+        </div>
+        <div class="port-body">
+          <h3>Soulgani</h3>
+          <p>A Shopify storefront for a purpose-driven activewear brand, giving back a share of every sale to charity. Custom collections, product pages, and a conversion-focused checkout flow.</p>
+          <div class="tags"><span class="tag">Shopify</span><span class="tag">eCommerce</span><span class="tag">Apparel</span></div>
+          <a href="https://soulgani.com/" target="_blank" class="port-link">
             View Project
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
